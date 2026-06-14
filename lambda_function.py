@@ -1,4 +1,6 @@
-print("AWS Cost Intelligence")
-print("main branch changes")
-print("feature branch change")
-print("DEPLOYED THROUGH GITHUB ACTIONS")
+def lambda_handler(event, context):
+
+    return {
+        "statusCode": 200,
+        "message": "Terraform Lambda"
+    }
