@@ -1,4 +1,12 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Lambda Packages
+*.zip
+
+# Python
 __pycache__/
 *.pyc
-.env
-.DS_Store
