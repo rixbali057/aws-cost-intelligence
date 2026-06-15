@@ -4,7 +4,7 @@
 
 resource "aws_iam_role" "lambda_role" {
 
-  name = "aws-cost-report-dev-role-tf"
+  name = var.iam_role_name
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
