@@ -39,10 +39,16 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Debug Repository
+        run: |
+          pwd
+          ls -R
+
       - name: Package Lambda
         run: |
+            mkdir -p build
             cd scripts
-            zip -r ../lambda.zip
+            zip -r ../build/lambda.zip
 
       - name: Terraform Init
         working-directory: terraform
