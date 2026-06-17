@@ -1,26 +1,9 @@
-name: Terraform Deployment
-
-on:
-  workflow_dispatch:
-    inputs:
-
-      environment:
-        description: "Environment"
-        required: true
-        default: "dev"
-
-      action:
-        description: "Terraform Action"
-        required: true
-        default: "plan"
-        type: choice
-        options:
-          - plan
-          - apply
-
 jobs:
 
   terraform:
+
+    environment:
+      name: dev
 
     runs-on: ubuntu-latest
 
@@ -46,9 +29,9 @@ jobs:
 
       - name: Package Lambda
         run: |
-            mkdir -p build
-            cd scripts
-            zip -r ../build/lambda.zip .
+          mkdir -p build
+          cd scripts
+          zip -r ../build/lambda.zip .
 
       - name: Terraform Init
         working-directory: terraform
