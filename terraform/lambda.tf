@@ -7,7 +7,7 @@ resource "aws_lambda_function" "cost_lambda" {
 
   function_name = var.lambda_name
 
-  filename = "../lambda.zip"
+  filename = "../build/lambda.zip"
 
   source_code_hash = filebase64sha256("../build/lambda.zip")
 
