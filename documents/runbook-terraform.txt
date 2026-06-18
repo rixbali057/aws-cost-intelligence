@@ -1,0 +1,7 @@
+Terraform Troubleshooting
+
+1. Run terraform validate
+2. Run terraform plan
+3. Check state file
+4. Verify backend configuration
+5. Verify IAM permissions

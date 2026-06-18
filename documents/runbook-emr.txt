@@ -1,0 +1,6 @@
+EMR Serverless Troubleshooting
+
+1. Check application logs
+2. Verify subnet configuration
+3. Check CPU quota limits
+4. Validate IAM permissions

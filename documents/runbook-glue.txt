@@ -1,0 +1,7 @@
+AWS Glue Troubleshooting
+
+1. Check CloudWatch logs
+2. Validate IAM role
+3. Verify subnet connectivity
+4. Check bookmark configuration
+5. Validate S3 permissions
