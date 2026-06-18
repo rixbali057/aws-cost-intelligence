@@ -1,6 +1,6 @@
 resource "aws_cloudwatch_event_rule" "lambda_schedule" {
 
-  name                = "aws-cost-report-dev-schedule"
+  name = "aws-cost-report-dev-schedule"
 
   schedule_expression = var.schedule_expression
 }
