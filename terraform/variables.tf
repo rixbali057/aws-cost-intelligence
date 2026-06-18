@@ -17,3 +17,13 @@ variable "runtime" {
 variable "schedule_expression" {
   default = "rate(5 minutes)"
 }
+
+variable "enable_ai_lab" {
+  description = "Enable AI Lab resource"
+  type        = bool
+  default     = false
+}
+
+variable "enable_monitoring" {
+  default = false
+}

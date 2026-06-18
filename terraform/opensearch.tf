@@ -1,33 +1,35 @@
 
-# resource "aws_opensearchserverless_security_policy" "encryption" {
+resource "aws_opensearchserverless_security_policy" "encryption" {
 
-#   name = "bedrock-kb-encryption"
+  count = var.enable_ai_lab ? 1 : 0 #Conditional experssion tf
 
-#   type = "encryption"
+  name = "bedrock-kb-encryption"
 
-#   policy = jsonencode({
-#     Rules = [
-#       {
-#         ResourceType = "collection"
-#         Resource = [
-#           "collection/bedrock-kb-dev"
-#         ]
-#       }
-#     ]
+  type = "encryption"
 
-#     AWSOwnedKey = true
-#   })
-# }
+  policy = jsonencode({
+    Rules = [
+      {
+        ResourceType = "collection"
+        Resource = [
+          "collection/bedrock-kb-dev"
+        ]
+      }
+    ]
 
-# resource "aws_opensearchserverless_collection" "bedrock_vector" {
+    AWSOwnedKey = true
+  })
+}
 
-#   name = "bedrock-kb-dev"
+resource "aws_opensearchserverless_collection" "bedrock_vector" {
 
-#   type = "VECTORSEARCH"
+  count = var.enable_ai_lab ? 1 : 0
 
-#   depends_on = [aws_opensearchserverless_security_policy.encryption
-#   ]
+  name = "bedrock-kb-dev"
 
-# }
+  type = "VECTORSEARCH"
 
-# */
+  depends_on = [aws_opensearchserverless_security_policy.encryption
+  ]
+
+}
