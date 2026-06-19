@@ -6,10 +6,10 @@
 resource "aws_lambda_function" "cost_lambda" {
 
   function_name = var.lambda_name
-
-  filename = "../build/lambda.zip"
-
-  source_code_hash = filebase64sha256("../build/lambda.zip")
+  
+  filename = data.archive_file.lambda_zip.output_path
+  
+  source_code_hash = data.archive_file.lambda_zip.output_base64sha256
 
   role = aws_iam_role.lambda_role.arn
 

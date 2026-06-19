@@ -52,12 +52,7 @@ jobs:
         run: |
           pwd
           ls -R
-
-      - name: Package Lambda
-        run: |
-          mkdir -p build
-          cd scripts
-          zip -r ../build/lambda.zip .
+          
 
       - name: Terraform Init
         working-directory: terraform
