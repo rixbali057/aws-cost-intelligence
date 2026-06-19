@@ -11,7 +11,7 @@ resource "aws_cloudwatch_event_target" "lambda_target" {
 
   target_id = "CostReportLambda"
 
-  arn = aws_lambda_function.cost_lambda.arn
+  arn = module.lambda.lambda_arn
 }
 
 resource "aws_lambda_permission" "allow_eventbridge" {
@@ -20,7 +20,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 
   action = "lambda:InvokeFunction"
 
-  function_name = aws_lambda_function.cost_lambda.function_name
+  function_name = module.lambda.lambda_name
 
   principal = "events.amazonaws.com"
 
