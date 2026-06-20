@@ -1,6 +1,6 @@
 resource "aws_dynamodb_table" "terraform_lock" {
 
-  name         = "terraform-lock-table"
+  name = "terraform-lock-table"
 
   billing_mode = "PAY_PER_REQUEST"
 

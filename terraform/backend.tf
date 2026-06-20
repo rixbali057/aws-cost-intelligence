@@ -7,5 +7,7 @@ terraform {
     key = "aws-cost-intelligence/dev/terraform.tfstate"
 
     region = "us-east-1"
+
+    dynamodb_table = "terraform-lock-table"
   }
 }
