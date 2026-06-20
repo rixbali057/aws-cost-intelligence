@@ -21,7 +21,7 @@ variable "schedule_expression" {
 variable "enable_ai_lab" {
   description = "Enable AI Lab resource"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "enable_monitoring" {

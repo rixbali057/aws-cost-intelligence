@@ -29,7 +29,6 @@ resource "aws_iam_policy" "bedrock_s3_access" {
   name = "bedrock-kb-s3-access"
 
   policy = jsonencode({
-
     Version = "2012-10-17"
 
     Statement = [
@@ -46,7 +45,28 @@ resource "aws_iam_policy" "bedrock_s3_access" {
           aws_s3_bucket.bedrock_docs.arn,
           "${aws_s3_bucket.bedrock_docs.arn}/*"
         ]
-      }
+      },
+
+      {
+        Effect = "Allow"
+
+        Action = [
+          "bedrock:InvokeModel"
+        ]
+
+        Resource = [
+          "arn:aws:bedrock:*::foundation-model/amazon.titan-embed-text-v2:0"
+        ]
+      },
+
+      {
+        Effect =  "Allow",
+
+        Action =  [
+          "aoss:APIAccessAll"
+          ],
+          Resource =  "*"
+          }
     ]
   })
 }
